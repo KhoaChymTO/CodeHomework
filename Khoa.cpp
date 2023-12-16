@@ -1,43 +1,59 @@
-# Khoa
-# Khoa
-int num1, num2;
-    int sum, difference, product, quotient;
+#include <stdio.h>
 
-    // Nhập hai số nguyên từ người dùng
-    printf("Nhap so nguyen thu nhat: ");
-    scanf("%d", &num1);
+int main() {
+    // Khai báo biến
+    int a, b, sum, diff, product;
+    float quotient;
 
-    printf("Nhap so nguyen thu hai: ");
-    scanf("%d", &num2);
+    // Nhập giá trị cho a và b
+    printf("Nhap gia tri cho a: ");
+    scanf("%d", &a);
 
-    // Tính toán các phép toán
-    sum = num1 + num2;
-    difference = num1 - num2;
-    product = num1 * num2;
+    printf("Nhap gia tri cho b: ");
+    scanf("%d", &b);
+
+    // Thực hiện các phép toán
+    sum = a + b;
+    diff = a - b;
+    product = a * b;
 
     // Kiểm tra tránh chia cho 0
-    if (num2 != 0) {
-        quotient = num1 / num2;
+    if (b != 0) {
+        quotient = (float)a / b;
 
-        // In kết quả thương
-        printf("Thuong cua %d va %d la %d\n", num1, num2, quotient);
+        // In ra màn hình kết quả
+        printf("Tong: %d\n", sum);
+        printf("Hieu: %d\n", diff);
+        printf("Tich: %d\n", product);
+        printf("Thuong: %.2f\n", quotient);
 
-        // Kiểm tra kết quả chia hết cho số chẵn hay số lẻ
-        if (quotient % 2 == 0) {
-            printf("Ket qua chia het cho so chan.\n");
+        // Kiểm tra và in ra màn hình kết quả chia hết cho số chẵn và số lẻ
+        if (sum % 2 == 0) {
+            printf("Tong chia het cho so chan.\n");
         } else {
-            printf("Ket qua chia het cho so le.\n");
+            printf("Tong khong chia het cho so chan.\n");
+        }
+
+        if (diff % 2 == 0) {
+            printf("Hieu chia het cho so chan.\n");
+        } else {
+            printf("Hieu khong chia het cho so chan.\n");
+        }
+
+        if (product % 2 == 0) {
+            printf("Tich chia het cho so chan.\n");
+        } else {
+            printf("Tich không chia het cho so chan.\n");
+        }
+
+        if (((int)quotient) % 2 == 0) {
+            printf("Thuong chia het cho so chan.\n");
+        } else {
+            printf("Thuong khong chia het cho so chan.\n");
         }
     } else {
-        printf("Khong the chia cho 0.\n");
+        printf("Loi: Khong the chia cho 0.\n");
     }
-
-    // In các kết quả khác
-    printf("Tong la %d\n", sum);
-    printf("Hieu la %d\n", difference);
-    printf("Tich la %d\n", product);
 
     return 0;
 }
-#CodeHomework
-#CodeHomework
